@@ -49,7 +49,7 @@ body{padding-left:env(safe-area-inset-left,0);padding-right:env(safe-area-inset-
   <div class="field"><label for="studentName">Nama lengkap</label><input id="studentName" placeholder="KETIK NAMA LENGKAP" autocomplete="off" autocapitalize="characters" spellcheck="false" style="text-transform:uppercase;font-weight:600" oninput="var a=this.selectionStart,b=this.selectionEnd;this.value=this.value.toUpperCase().replace(/[^A-Z .,'\-]/g,'');this.setSelectionRange(a,b)" onkeydown="if(event.key==='Enter')login()"></div>
   <div class="field"><label for="studentClass">Kelas</label><select id="studentClass"><option value="">Pilih kelas</option><option>X AK</option><option>XI AK</option><option>XII AK</option></select></div>
   <button class="btn primary" onclick="login()" style="width:100%;padding:13px;margin-top:5px">Mulai mengerjakan →</button>
-  <div class="rules"><b>Sebelum mulai</b><ul><li>Isi nama sesuai absen. Jawaban tersimpan atas nama ini di perangkat dan browser ini.</li><li><b>Cara menulis tanggal sama seperti di latihan belajar:</b> tulis tanggal pada baris pertama tiap transaksi (ketik 03012026 menjadi 03/01/2026). Baris lanjutan transaksi yang sama boleh dikosongkan tanggalnya; baris tanpa tanggal dianggap lanjutan transaksi di atasnya.</li><li><b>Latihan ATS hanya dapat dikumpulkan sekali.</b> Semua lembar kerja langsung dibuka dan boleh dikerjakan dalam urutan apa pun. Tidak ada koreksi saat mengerjakan; penilaian dilakukan otomatis saat <b>Kumpulkan</b>. Ada 11 soal (10 tanggal transaksi + 1 rekapitulasi) yang dinilai sendiri-sendiri dengan bobot sama.</li><li><b>Waktu:</b> layar menampilkan sudah berapa menit kamu mengerjakan. Batas <b id="rulesMin">70</b> menit hanya sebagai pengingat, pengerjaan tidak dikumpulkan otomatis, jadi tekan Kumpulkan sendiri, selesai maupun belum selesai. Setelah dikumpulkan, jawaban tidak bisa diubah dan tidak bisa dikumpulkan lagi. Nilai serta benar/salah per soal akan tampil, dan <b>PDF hasil dibuat otomatis: kirim file PDF itu ke guru</b> sebagai bukti pengumpulan (butuh koneksi internet saat PDF dibuat).</li><li><b>Mode pengawasan:</b> sistem mencatat aktivitas meninggalkan halaman, berpindah aplikasi/tab, keluar dari layar penuh, dan gangguan lain yang dapat dideteksi browser. Durasi kurang dari 10 detik dicatat sebagai gangguan singkat; 10 detik atau lebih dihitung sebagai indikasi. Berapa pun jumlah indikasinya, pengerjaan tetap berjalan: tidak ada penguncian, jeda, atau pengumpulan otomatis. Guru akan meninjau catatan pada laporan. Aktivitas yang tidak dapat diketahui browser tidak akan diklaim terdeteksi.</li><li>Jika halaman tertutup atau perangkat mati, login lagi dengan nama dan kelas yang sama untuk melanjutkan. Kejadian itu tetap tercatat.</li></ul></div>
+  <div class="rules"><b>Sebelum mulai</b><ul><li>Isi nama sesuai absen. Jawaban tersimpan atas nama ini di perangkat dan browser ini.</li><li><b>Cara menulis tanggal sama seperti di latihan belajar:</b> tulis tanggal pada baris pertama tiap transaksi (ketik 03012026 menjadi 03/01/2026). Baris lanjutan transaksi yang sama boleh dikosongkan tanggalnya; baris tanpa tanggal dianggap lanjutan transaksi di atasnya.</li><li><b>Latihan ATS hanya dapat dikumpulkan sekali.</b> Semua lembar kerja langsung dibuka dan boleh dikerjakan dalam urutan apa pun. Tidak ada koreksi saat mengerjakan; penilaian dilakukan otomatis saat <b>Kumpulkan</b>. Ada 11 soal (10 tanggal transaksi + 1 rekapitulasi) yang dinilai sendiri-sendiri dengan bobot sama.</li><li><b>Waktu:</b> layar menampilkan sudah berapa menit kamu mengerjakan. Batas <b id="rulesMin">70</b> menit hanya sebagai pengingat, pengerjaan tidak dikumpulkan otomatis, jadi tekan Kumpulkan sendiri, selesai maupun belum selesai. Setelah dikumpulkan, jawaban tidak bisa diubah dan tidak bisa dikumpulkan lagi. Nilai serta benar/salah per soal akan tampil, dan <b>laporan hasil bisa kamu unduh sebagai PDF atau TXT (pilih sendiri, tidak diunduh otomatis): kirim file itu ke guru</b> sebagai bukti pengumpulan. PDF butuh koneksi internet, TXT tidak.</li><li><b>Mode pengawasan:</b> sistem mencatat aktivitas meninggalkan halaman, berpindah aplikasi/tab, keluar dari layar penuh, dan gangguan lain yang dapat dideteksi browser. Durasi kurang dari 10 detik dicatat sebagai gangguan singkat; 10 detik atau lebih dihitung sebagai indikasi. Berapa pun jumlah indikasinya, pengerjaan tetap berjalan: tidak ada penguncian, jeda, atau pengumpulan otomatis. Guru akan meninjau catatan pada laporan. Aktivitas yang tidak dapat diketahui browser tidak akan diklaim terdeteksi.</li><li>Jika halaman tertutup atau perangkat mati, login lagi dengan nama dan kelas yang sama untuk melanjutkan. Kejadian itu tetap tercatat.</li></ul></div>
   <div id="gdIosSlot"></div>
 </div>
 <div id="app" class="hidden">
@@ -58,7 +58,7 @@ body{padding-left:env(safe-area-inset-left,0);padding-right:env(safe-area-inset-
 <section class="welcome"><div><span class="pill">LATIHAN ATS · AKUNTANSI</span><h2>Halo, <span id="helloName">Siswa</span>! 👋</h2><p>Kerjakan semua lembar kerja berdasarkan 10 transaksi, dalam urutan apa pun. Penilaian dilakukan otomatis saat kamu menekan Kumpulkan, dan Latihan ATS ini hanya dapat dikumpulkan sekali.</p></div><div class="student-chip"><small>IDENTITAS SISWA</small><strong id="studentIdentity">Nama · Kelas</strong><div style="font-size:11px;color:#c9ded7;margin-top:5px">Metode persediaan: FIFO</div></div></section>
 <div class="stats"><div class="stat"><span>Jumlah transaksi</span><strong>10</strong></div><div class="stat"><span>Lembar kerja</span><strong>10</strong></div><div class="stat"><span>Metode persediaan</span><strong>FIFO</strong></div></div>
 <div class="layout">
-<aside class="side"><div class="side-title">MENU LEMBAR KERJA</div><div id="navList" class="nav-list"></div><div style="border-top:1px solid var(--line);margin-top:10px;padding-top:10px"><button id="btnSubmit" class="btn primary" style="width:100%" onclick="submitAll()">✓ Kumpulkan</button><button class="btn gold dl hidden" style="width:100%;margin-top:8px" onclick="downloadPDF()">⬇ Unduh hasil PDF</button><button class="btn dl hidden" style="width:100%;margin-top:8px" onclick="sharePDF()">📤 Bagikan PDF ke guru</button><button class="btn" style="width:100%;margin-top:8px" onclick="toggleTeacherAccess()">🔑 Menu guru</button><p id="subHint" class="hint" style="padding:0 5px"></p></div></aside>
+<aside class="side"><div class="side-title">MENU LEMBAR KERJA</div><div id="navList" class="nav-list"></div><div style="border-top:1px solid var(--line);margin-top:10px;padding-top:10px"><button id="btnSubmit" class="btn primary" style="width:100%" onclick="submitAll()">✓ Kumpulkan</button><button class="btn gold dl hidden" style="width:100%;margin-top:8px" onclick="downloadPDF()">⬇ Unduh hasil PDF</button><button class="btn dl hidden" style="width:100%;margin-top:8px" onclick="sharePDF()">📤 Bagikan PDF ke guru</button><button class="btn gold dl hidden" style="width:100%;margin-top:8px" onclick="saveTXT()">⬇ Unduh hasil TXT</button><button class="btn dl hidden" style="width:100%;margin-top:8px" onclick="shareTXT()">📤 Bagikan TXT ke guru</button><button class="btn" style="width:100%;margin-top:8px" onclick="toggleTeacherAccess()">🔑 Menu guru</button><p id="subHint" class="hint" style="padding:0 5px"></p></div></aside>
 <section class="panel"><div id="sheetHeader" class="content-head"></div><div id="sheetBody" class="panel-body"></div></section>
 </div>
 <div class="footer"><span id="coFoot">Latihan ATS</span></div>
@@ -139,7 +139,7 @@ function gdBar(){
   if(document.getElementById("gdEndBar"))return;
   const w=document.querySelector("main.wrap");if(!w)return;
   const d=document.createElement("div");d.id="gdEndBar";d.className="gd-endbar";
-  d.innerHTML='<b>✅ Latihan ATS sudah dikumpulkan.</b> Jawaban tidak bisa diubah dan tidak bisa dikumpulkan lagi. Kirim file PDF hasil ke guru; PDF bisa diunduh ulang lewat menu samping.<details><summary>Guru: buka kembali sesi</summary><input id="gdEndPw" type="password" autocomplete="off" placeholder="Password guru"><button type="button" id="gdEndOpen">Buka</button><div id="gdEndErr"></div></details>';
+  d.innerHTML='<b>✅ Latihan ATS sudah dikumpulkan.</b> Jawaban tidak bisa diubah dan tidak bisa dikumpulkan lagi. Kirim file laporan (PDF atau TXT) ke guru; laporan bisa diunduh ulang lewat menu samping.<details><summary>Guru: buka kembali sesi</summary><input id="gdEndPw" type="password" autocomplete="off" placeholder="Password guru"><button type="button" id="gdEndOpen">Buka</button><div id="gdEndErr"></div></details>';
   w.insertBefore(d,w.firstChild);
   document.getElementById("gdEndOpen").addEventListener("click",async function(){
     const pw=document.getElementById("gdEndPw").value.trim(),er=document.getElementById("gdEndErr");
@@ -467,8 +467,36 @@ function pdfLembarJawaban(doc,y,R){
 }
 
 function ensureJsPDF(){return new Promise(res=>{const ok=()=>!!(window.jspdf&&window.jspdf.jsPDF);if(ok())return res(true);const srcs=["https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js","https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"];let i=0;const next=()=>{if(ok())return res(true);if(i>=srcs.length)return res(false);const s=document.createElement("script");let done=false;const fin=()=>{if(done)return;done=true;clearTimeout(t);ok()?res(true):next()};const t=setTimeout(fin,8000);s.onload=fin;s.onerror=fin;s.src=srcs[i++];document.head.appendChild(s)};next()})}
-async function downloadPDF(){let built=null;try{built=await buildPDF()}catch(e){built=null}if(!built){atsToast("PDF belum bisa dibuat. Periksa koneksi internet lalu coba lagi.");return}built.doc.save(built.name)}
-async function sharePDF(){let built=null;try{built=await buildPDF()}catch(e){built=null}if(!built){atsToast("PDF belum bisa dibuat. Periksa koneksi internet lalu coba lagi.");return}
+
+function buildTXT(){
+ save();
+ const T=gdTimes(),R=submitted?((ST.meta&&ST.meta.result)||atsResult()):null,L=[],ln=s=>L.push(s);
+ const nm=(String(student.name||"siswa")+"_"+String(student.cls||"")).replace(/[^A-Za-z0-9_-]+/g,"_");
+ const dt=new Date((submitted&&ST.meta&&ST.meta.finishedAt)||Date.now()).toLocaleString("id-ID",{dateStyle:"long",timeStyle:"short"});
+ const fr=(sk,o)=>{const cfg=CFG[sk];return cfg.head.concat(cfg.cols).filter(c=>(o[c]||"").trim()).map(c=>lab(sk,c)+": "+o[c].trim()).join(" | ")};
+ const hr="-".repeat(52);
+ ln("LAPORAN HASIL LATIHAN ATS - AKUNTANSI");ln(PK.co);ln("=".repeat(52));ln("");
+ ln("A. IDENTITAS SISWA");ln("Nama siswa           : "+(student.name||"-"));ln("Kelas                : "+(student.cls||"-"));ln("Versi Latihan ATS    : Versi "+PK.id+" - "+PK.co);ln("Waktu mulai          : "+T.sTxt);ln("Waktu selesai/kumpul : "+T.eTxt);ln("Total waktu          : "+T.dur);ln("");
+ ln("B. RINGKASAN HASIL");ln("Status pengumpulan  : "+(submitted?"Sudah dikumpulkan":"Belum dikumpulkan"));ln("Nilai                : "+(R?fmtNilai(R.nilai)+" / 100":"Belum dinilai"));ln("Soal benar           : "+(R?R.benar+" dari 11 soal":"-"));ln("Soal salah           : "+(R?(11-R.benar)+" soal":"-"));ln("Batas waktu          : "+DURASI_MENIT+" menit");ln("Waktu laporan dibuat : "+dt);ln("");
+ ln("C. CATATAN PENGAWASAN");ln("Indikasi (>= 10 dtk) : "+gdViol()+" kali");ln("Gangguan singkat     : "+gdShort()+" kali (< 10 detik, tidak dihitung)");ln("Tindakan otomatis    : Tidak ada penguncian atau pengumpulan otomatis");ln("Catatan              : Indikasi = catatan aktivitas browser, bukan bukti kecurangan");
+ const lg=gdLog();if(!lg.length)ln("Riwayat aktivitas    : Tidak ada aktivitas yang tercatat.");else lg.slice(0,18).forEach((e,i)=>ln("Aktivitas "+(i+1)+" : "+e));if(lg.length>18)ln("(+"+(lg.length-18)+" catatan tambahan tersimpan di browser)");ln("");
+ ln("D. RINGKASAN HASIL PER SOAL");transactions.forEach((t,i)=>ln("Soal "+(i+1)+" | "+t[0]+" | "+t[1]+" - "+(R?(R.r[i]?"BENAR":"SALAH"):"BELUM DINILAI")));ln("Soal 11 | Total, nomor akun, rekapitulasi - "+(R?(R.r[10]?"BENAR":"SALAH"):"BELUM DINILAI"));ln("");
+ ln("E. LEMBAR JAWABAN SISWA PER TANGGAL");ln("");
+ for(let i=0;i<STEPD.length;i++){ln(hr);ln("Soal "+(i+1)+" | "+STEPD[i]+" | "+transactions[i][1]+" - "+(R?(R.r[i]?"BENAR":"SALAH"):"BELUM DINILAI"));let any=false;
+  Object.keys(CFG).forEach(sk=>{const b=sBlock(sk,STEPD[i]);if(!b)return;any=true;ln("  "+CFG[sk].n);b.rows.forEach((o,j)=>ln("    "+(j+1)+". "+(fr(sk,o)||"(baris kosong)")))});
+  if(!any)ln("  (tidak ada isian untuk tanggal ini)")}
+ ln(hr);ln("Soal 11 | Total, nomor akun, rekapitulasi - "+(R?(R.r[10]?"BENAR":"SALAH"):"BELUM DINILAI"));
+ Object.keys(FINN).forEach(sk=>{const cfg=CFG[sk],n=((CHK.fin||{})[sk]||{}).n||0,rd=[],rk=[];
+  for(let k=0;k<n;k++){const a=aval(sk,"rc"+k,"dacc"),b=aval(sk,"rc"+k,"dtot"),c=aval(sk,"rc"+k,"kacc"),d=aval(sk,"rc"+k,"ktot");if(a||b)rd.push(a+" = "+b);if(c||d)rk.push(c+" = "+d)}
+  ln("  "+FINN[sk]);ln("    TOTAL          : "+(cfg.cols.filter(c=>aval(sk,"tot",c)).map(c=>lab(sk,c)+" = "+aval(sk,"tot",c)).join("; ")||"-"));
+  ln("    ACCOUNT NUMBER : "+(cfg.cols.filter(c=>aval(sk,"acc",c)).map(c=>lab(sk,c)+" = "+aval(sk,"acc",c)).join("; ")||"-"));
+  ln("    Rekap Debit    : "+(rd.join("; ")||"-"));ln("    Rekap Credit   : "+(rk.join("; ")||"-"));ln("    TOTAL Rekap    : Debit "+(aval(sk,"rcT","dtot")||"-")+" | Credit "+(aval(sk,"rcT","ktot")||"-"))});
+ ln("");ln("Catatan: laporan ini dibuat otomatis dari data yang tersimpan pada browser perangkat siswa. Kirim file ini kepada guru sebagai bukti pengumpulan.");
+ return{text:L.join("\n"),name:"laporan_latihan_ats_"+nm+".txt"}}
+function saveTXT(){const b=buildTXT(),blob=new Blob(["\uFEFF"+b.text.replace(/\n/g,"\r\n")],{type:"text/plain;charset=utf-8"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=b.name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
+async function shareTXT(){const b=buildTXT();try{const f=new File([b.text],b.name,{type:"text/plain"});if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],title:"Hasil Latihan ATS "+student.name});return}}catch(e){if(e&&e.name==="AbortError")return}saveTXT();atsToast("Perangkat tidak mendukung bagikan langsung. TXT diunduh, kirim file itu ke guru.")}
+async function downloadPDF(){let built=null;try{built=await buildPDF()}catch(e){built=null}if(!built){atsToast("PDF belum bisa dibuat. Periksa koneksi internet, atau unduh versi TXT.");return}built.doc.save(built.name)}
+async function sharePDF(){let built=null;try{built=await buildPDF()}catch(e){built=null}if(!built){atsToast("PDF belum bisa dibuat. Periksa koneksi internet, atau unduh versi TXT.");return}
   try{const blob=built.doc.output("blob"),file=new File([blob],built.name,{type:"application/pdf"});if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:"Hasil Latihan ATS "+student.name});return}}catch(e){if(e&&e.name==="AbortError")return}
   built.doc.save(built.name);atsToast("Perangkat tidak mendukung bagikan langsung. PDF diunduh, kirim file itu ke guru.")}
 async function buildPDF(){
@@ -568,32 +596,25 @@ async function buildPDF(){
 }
 async function submitAll(){
   if(submitted)return;
-  const ok=await kmAsk("Kumpulkan Latihan ATS?","Penilaian dilakukan otomatis sekarang, lalu <b>PDF hasil</b> dibuat untuk kamu kirim ke guru. Setelah itu jawaban <b>tidak bisa diubah</b> dan <b>tidak bisa dikumpulkan lagi</b>. Soal yang belum terisi dihitung salah. Yakin kumpulkan?","Ya, kumpulkan","Batal");
+  const ok=await kmAsk("Kumpulkan Latihan ATS?","Penilaian dilakukan otomatis sekarang, lalu kamu memilih sendiri mengunduh laporan <b>PDF atau TXT</b> untuk dikirim ke guru. Tidak ada unduhan otomatis. Setelah itu jawaban <b>tidak bisa diubah</b> dan <b>tidak bisa dikumpulkan lagi</b>. Soal yang belum terisi dihitung salah. Yakin kumpulkan?","Ya, kumpulkan","Batal");
   if(!ok)return;
   save();
   const RS=atsResult(),finishedAt=new Date().toISOString();
   ST.meta=ST.meta||{};if(!ST.meta.startedAt)ST.meta.startedAt=startedAt||finishedAt;
   const prevR=ST.meta.result,prevF=ST.meta.finishedAt;
   ST.meta.result=RS;ST.meta.finishedAt=finishedAt;submitted=true;
-  let built=null;try{built=await buildPDF()}catch(e){built=null}
-  if(!built){
-    submitted=false;if(prevR===undefined)delete ST.meta.result;else ST.meta.result=prevR;if(prevF===undefined)delete ST.meta.finishedAt;else ST.meta.finishedAt=prevF;
-    await kmAsk("PDF belum bisa dibuat","Pembuatan PDF gagal, kemungkinan karena tidak ada koneksi internet (pustaka PDF dimuat dari internet). Pekerjaanmu <b>belum dikumpulkan</b> dan masih bisa dilanjutkan. Sambungkan internet lalu tekan Kumpulkan lagi.","Mengerti");
-    return;
-  }
   gdEndSession("manual");
-  built.doc.save(built.name);
   go(1);updateGate();atsScrollHasil();
-  await kmAsk("Latihan ATS dikumpulkan","Nama: <b>"+esc(student.name)+"</b><br>Kelas: "+esc(student.cls)+"<br><br>Nilai: <b style=\"font-size:20px\">"+fmtNilai(RS.nilai)+"</b> / 100<br>Benar "+RS.benar+" dari 11 soal.<br><br>PDF hasil sudah dibuat. <b>Kirim file PDF itu ke guru.</b> Jika file tidak ditemukan, tekan Unduh atau Bagikan PDF di bawah hasil.","OK");
+  await kmAsk("Latihan ATS dikumpulkan","Nama: <b>"+esc(student.name)+"</b><br>Kelas: "+esc(student.cls)+"<br><br>Nilai: <b style=\"font-size:20px\">"+fmtNilai(RS.nilai)+"</b> / 100<br>Benar "+RS.benar+" dari 11 soal.<br><br>Pilih format laporan di bawah hasil: <b>Unduh PDF</b> (butuh internet) atau <b>Unduh TXT</b>, lalu <b>kirim file itu ke guru</b>. Tidak ada unduhan otomatis.","OK");
 }
 function showScore(){let el=document.getElementById("score-result");const b=document.getElementById("sheetBody");if(!el){el=document.createElement("div");el.id="score-result";el.className="scorebox";b.insertBefore(el,b.firstChild)}
 const R=(ST.meta&&ST.meta.result)||atsResult();
 const rows=R.r.map((ok,i)=>`<li class="${ok?"ok":"bad"}"><span>Soal ${i+1} · ${i<10?transactions[i][0]+" · "+transactions[i][1]:"Total, nomor akun, rekap"}</span><b>${ok?"✅ Benar":"❌ Salah"}</b></li>`).join("");
-el.innerHTML=`<h3>Hasil Latihan ATS</h3><div class="ats-nilai">${fmtNilai(R.nilai)}<small> / 100</small></div><p>${esc(student.name)} · ${esc(student.cls)}<br>Benar <b>${R.benar}</b> dari 11 soal · Salah <b>${11-R.benar}</b></p><ul class="ats-res">${rows}</ul><button class="btn gold" onclick="downloadPDF()">⬇ Unduh hasil PDF</button> <button class="btn" onclick="sharePDF()">📤 Bagikan PDF ke guru</button><p class="hint">Kirim file PDF ini kepada guru sebagai bukti pengumpulan.</p>`}
+el.innerHTML=`<h3>Hasil Latihan ATS</h3><div class="ats-nilai">${fmtNilai(R.nilai)}<small> / 100</small></div><p>${esc(student.name)} · ${esc(student.cls)}<br>Benar <b>${R.benar}</b> dari 11 soal · Salah <b>${11-R.benar}</b></p><ul class="ats-res">${rows}</ul><div class="bottom-actions" style="flex-wrap:wrap"><button class="btn gold" onclick="downloadPDF()">⬇ Unduh PDF</button><button class="btn gold" onclick="saveTXT()">⬇ Unduh TXT</button><button class="btn" onclick="sharePDF()">📤 Bagikan PDF</button><button class="btn" onclick="shareTXT()">📤 Bagikan TXT</button></div><p class="hint">Pilih salah satu format (PDF butuh internet, TXT tidak). Kirim file itu kepada guru sebagai bukti pengumpulan.</p>`}
 
 function updateGate(){if(!student||!student.name)return;
 document.querySelectorAll(".dl").forEach(e=>e.classList.toggle("hidden",!submitted));
-const h=document.getElementById("subHint");if(h)h.textContent=submitted?"Latihan ATS sudah dikumpulkan. Kirim file PDF hasil ke guru.":"Kerjakan semua lembar kerja, lalu tekan Kumpulkan. Penilaian dilakukan saat dikumpulkan dan PDF hasil dibuat untuk kamu kirim ke guru. Soal yang belum terisi dihitung salah."}
+const h=document.getElementById("subHint");if(h)h.textContent=submitted?"Latihan ATS sudah dikumpulkan. Unduh laporan (PDF atau TXT) lalu kirim ke guru.":"Kerjakan semua lembar kerja, lalu tekan Kumpulkan. Penilaian dilakukan saat dikumpulkan, lalu kamu memilih unduh laporan PDF atau TXT untuk dikirim ke guru. Soal yang belum terisi dihitung salah."}
 
 function fixInvKey(k){const o=Object.assign({},k);["inv0","inv1"].forEach(sk=>{const cfg=CFG[sk],blocks=[];let cur=null;
 for(let r=0;r<cfg.rows;r++){const tg=(o[sk+"_"+r+"_tanggal"]||"").trim(),has=cfg.head.concat(cfg.cols).some(c=>nrm(c,o[sk+"_"+r+"_"+c]));if(tg){cur=[];blocks.push(cur)}if(cur&&(tg||has))cur.push(r)}
